@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  padding-top: 10px;
+  font-size: 13px;
+  font-family: arial, sans-serif;
+}
+
+ul li {
+  display: inline;
+}
+
+ul {
+  padding-left: 0px;
+}
+
+li {
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #4E4E4E
+}
+
+form {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+}
+
+button {
+  margin: 8px 5px;
+  padding: 9px 15px;
+  border: none;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #F2F2F2;
+  color: #757575;
+}
+
+#topleft {
+  padding-left: 15px;
+  float: left;
+}
+
+#topright {
+  position: relative;
+  bottom: 20px;
+  padding-right: 15px;
+  float: right;
+}
+
+#logo {
+  margin: 200px auto 0px;
+  margin-bottom: 0px;
+  width: 272px;
+  display: block;
+}
+
+#searchbar {
+  margin: 25px auto;
+  position: relative;
+  display: block;
+  height: 30px;
+  width: 570px;
+}
+
+#buttons {
+  text-align: center;
+}
+
+#bottomnavbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #F2F2F2;
+}
+
+#bottomright {
+  float: right;
+  padding-right: 20px;
+}
+
+#bottomleft {
+  float: left;
+  padding-left: 20px;
+}
+
+#voice {
+  position: absolute;
+  right: 560px;
+  top: 338px;
+  width: 24px;
+  height: 24px;
+}
+
+#apps {
+  position: relative;
+  width: 16px;
+  top: 3px;
+  opacity: 0.5;
+}
+
+#notification {
+  position: relative;
+  width: 20px;
+  top: 3px;
+  opacity: 0.5;
+}
+
+#user {
+  position: relative;
+  width: 36px;
+  top: 10px;
+  border-radius: 50px;
+}
+
+#topright li:nth-child(5) {
+  padding: 10px;
+}
