@@ -63,6 +63,8 @@ button {
   display: block;
   height: 30px;
   width: 570px;
+  background: url(assets/voice.png) no-repeat 530px;
+  background-size: 25px;
 }
 
 #buttons {
@@ -89,10 +91,10 @@ button {
 
 #voice {
   position: absolute;
-  right: 560px;
+  /* right: 560px;
   top: 338px;
   width: 24px;
-  height: 24px;
+  height: 24px; */
 }
 
 #apps {
