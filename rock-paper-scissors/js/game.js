@@ -1,7 +1,19 @@
-function playerPlay() {
-  let selection = prompt('Please enter your selection between Rock, Paper, or Scissors: ');
-  return selection;
-}
+const buttons = document.querySelectorAll('button');
+const output = document.querySelector('#output');
+const playerScore = document.querySelector('#player');
+const computerScore = document.querySelector('#computer');
+const result = document.createElement('h4');
+let playerWins = 0;
+let computerWins = 0;
+
+result.textContent = '';
+output.appendChild(result);
+
+buttons.forEach(function(button) {
+  button.addEventListener('click', function (e) {
+    playRound(button.id, computerPlay());
+  });
+});
 
 function computerPlay() {
   let number = Math.floor(Math.random() * 3) + 1
@@ -19,35 +31,42 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
   console.log(playerSelection, computerSelection);
   if (playerSelection.toLowerCase() === computerSelection) {
-    console.log('Draw');
+    return result.textContent = 'Tie';
   }
 
   if (playerSelection.toLowerCase() === 'rock') {
     if (computerSelection === 'paper') {
-      console.log('Computer wins! Paper covers rock.');
+      computerWins += 1;
+      computerScore.textContent = `${computerWins}`;
+      return result.textContent = 'Computer wins! Paper covers rock.';
     } else {
-      console.log('You win! Rock breaks scissors.');
+      playerWins += 1;
+      playerScore.textContent = `${playerWins}`;
+      return result.textContent = 'You win! Rock breaks scissors.';
     }
   }
 
   if (playerSelection.toLowerCase() === 'paper') {
-    if (computerSelection === 'scissors') {
-      console.log('Computer wins! Scissors cuts paper');
+    if (computerSelection ==;= 'scissors') {
+      computerWins += 1
+      computerScore.textContent = `${computerWins}`;
+      return result.textContent = 'Computer wins! Scissors cuts paper';
     } else {
-      console.log('You win! Paper covers rock.');
+      playerWins += 1;
+      playerScore.textContent = `${playerWins}`;
+      return result.textContent = 'You win! Paper covers rock.';
     }
   }
 
   if (playerSelection.toLowerCase() === 'scissors') {
     if (computerSelection === 'rock') {
-      console.log('Computer wins! Rock breaks scissors.');
+      computerWins += 1;
+      computerScore.textContent = `${computerWins}`;
+      return result.textContent = 'Computer wins! Rock breaks scissors.';
     } else {
-      console.log('You win! Scissors cuts paper');
+      playerWins += 1;
+      playerScore.textContent = `${playerWins}`;
+      return result.textContent = 'You win! Scissors cuts paper';
     }
   }
 }
-
-let playerSelection = playerPlay();
-let computerSelection = computerPlay();
-
-playRound(playerSelection, computerSelection);
