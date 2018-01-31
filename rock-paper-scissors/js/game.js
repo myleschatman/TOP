@@ -3,11 +3,14 @@ const output = document.querySelector('#output');
 const playerScore = document.querySelector('#player');
 const computerScore = document.querySelector('#computer');
 const result = document.createElement('h4');
+const final = document.createElement('h2');
 let playerWins = 0;
 let computerWins = 0;
 
 result.textContent = '';
+final.textContent = '';
 output.appendChild(result);
+output.appendChild(final);
 
 buttons.forEach(function(button) {
   button.addEventListener('click', function (e) {
@@ -29,7 +32,10 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  console.log(playerSelection, computerSelection);
+  final.textContent = '';
+  if (playerWins > 4 || computerWins > 4) {
+    gameOver(playerWins, computerWins);
+  }
   if (playerSelection.toLowerCase() === computerSelection) {
     return result.textContent = 'Tie';
   }
@@ -47,8 +53,8 @@ function playRound(playerSelection, computerSelection) {
   }
 
   if (playerSelection.toLowerCase() === 'paper') {
-    if (computerSelection ==;= 'scissors') {
-      computerWins += 1
+    if (computerSelection === 'scissors') {
+      computerWins += 1;
       computerScore.textContent = `${computerWins}`;
       return result.textContent = 'Computer wins! Scissors cuts paper';
     } else {
@@ -69,4 +75,21 @@ function playRound(playerSelection, computerSelection) {
       return result.textContent = 'You win! Scissors cuts paper';
     }
   }
+}
+
+function gameOver(playerWins, computerWins) {
+ if (playerWins === 5) {
+   final.textContent = 'You are the winner! Game Over.';
+   reset();
+ } else {
+   final.textContent = 'The Computer is the winner! Game Over.';
+   reset();
+ }
+}
+
+function reset() {
+  computerScore.textContent = '0';
+  playerScore.textContent = '0';
+  playerWins = 0;
+  computerWins = 0;
 }
