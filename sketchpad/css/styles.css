@@ -1,0 +1,29 @@
+body {
+  text-align: center;
+  font-family: 'Londrina Sketch', cursive;
+  font-size: 36px;
+}
+
+#container {
+  height: 960px;
+  width: 960px;
+  margin: 0 auto;
+  border: 2px solid black;
+  overflow: hidden;
+}
+
+#new-grid {
+  display: inline-block;
+  margin-bottom: 50px;
+  padding: 20px;
+  border: none;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #EBE9E7;
+  color: #3C2411;
+}
+
+.square {
+  display: inline-block;
+  float: left;
+}
